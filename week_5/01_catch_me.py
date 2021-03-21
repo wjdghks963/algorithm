@@ -20,9 +20,8 @@ def catch_me(cony_loc, brown_loc):
     queue.append((brown_loc, 0))
     visited = [{} for _ in range(200001)]
 
-
     while cony_loc > 200000:
-        cony_loc += time # 시간만큼 +1 +2 +3 +4 ...
+        cony_loc += time  # 시간만큼 +1 +2 +3 +4 ...
         if time in visited[cony_loc]:
             return time
 
@@ -30,7 +29,6 @@ def catch_me(cony_loc, brown_loc):
             current_position, current_time = queue.popleft()
 
             new_time = current_time + 1
-
             new_position = current_position - 1
             if 0 <= new_position <= 200000 and new_time not in visited[new_position]:
                 visited[new_position][new_time] = True
